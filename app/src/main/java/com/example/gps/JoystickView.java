@@ -21,68 +21,59 @@ public class JoystickView extends View {
     public JoystickView(Context context, AttributeSet attrs) {
         super(context, attrs);
         basePaint = new Paint();
-        basePaint.setColor(Color.parseColor("#AA000000"));
+        basePaint.setColor(Color.GRAY);
         basePaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        basePaint.setStrokeWidth(5);
 
         hatPaint = new Paint();
-        hatPaint.setColor(Color.parseColor("#FF4081"));
-        hatPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        hatPaint.setStrokeWidth(5);
+        hatPaint.setColor(Color.RED);
+        hatPaint.setStyle(Paint.Style.FILL);
+    }
 
-        if (context instanceof JoystickListener)
-            joystickCallback = (JoystickListener) context;
+    public void setJoystickListener(JoystickListener listener) {
+        this.joystickCallback = listener;
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        centerX = w / 2;
+        centerY = h / 2;
+        baseRadius = Math.min(w, h) / 3;
+        hatRadius = Math.min(w, h) / 5;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(Color.TRANSPARENT);
-        centerX = getWidth() / 2f;
-        centerY = getHeight() / 2f;
-        baseRadius = Math.min(getWidth(), getHeight()) / 3f;
-        hatRadius = Math.min(getWidth(), getHeight()) / 5f;
-
         canvas.drawCircle(centerX, centerY, baseRadius, basePaint);
-        float hatX = centerX + (touchX * baseRadius);
-        float hatY = centerY + (touchY * baseRadius);
-        canvas.drawCircle(hatX, hatY, hatRadius, hatPaint);
+        canvas.drawCircle(touchX, touchY, hatRadius, hatPaint);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float dx = event.getX() - centerX;
         float dy = event.getY() - centerY;
-        float displacement = (float) Math.sqrt(dx * dx + dy * dy);
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_MOVE:
-            case MotionEvent.ACTION_DOWN:
-                if (displacement < baseRadius) {
-                    touchX = dx / baseRadius;
-                    touchY = dy / baseRadius;
-                } else {
-                    float ratio = baseRadius / displacement;
-                    touchX = (dx * ratio) / baseRadius;
-                    touchY = (dy * ratio) / baseRadius;
-                }
-
-                if (joystickCallback != null) {
-                    joystickCallback.onJoystickMoved(touchX, touchY);
-                }
-                break;
-
-            case MotionEvent.ACTION_UP:
-                // 손을 뗐을 때 중심으로 초기화
-            touchX = 0;
-            touchY = 0;
-                if (joystickCallback != null) {
-                    joystickCallback.onJoystickMoved(0, 0);
-                }
-                break;
+        float distance = (float) Math.sqrt(dx * dx + dy * dy);
+        if (distance < baseRadius) {
+            touchX = event.getX();
+            touchY = event.getY();
+        } else {
+            touchX = centerX + dx * baseRadius / distance;
+            touchY = centerY + dy * baseRadius / distance;
         }
 
         invalidate();
+
+        float xPercent = (touchX - centerX) / baseRadius;
+        float yPercent = (touchY - centerY) / baseRadius;
+
+        if (event.getAction() != MotionEvent.ACTION_UP) {
+            if (joystickCallback != null)
+                joystickCallback.onJoystickMoved(xPercent, yPercent);
+        } else {
+            touchX = centerX;
+            touchY = centerY;
+            invalidate();
+            joystickCallback.onJoystickMoved(0, 0);
+        }
         return true;
     }
-
 }

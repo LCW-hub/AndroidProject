@@ -11,22 +11,24 @@ public class PolylineDecoder {
         int lat = 0, lng = 0;
 
         while (index < len) {
-            int result = 1, shift = 0, b;
+            int b, shift = 0, result = 0;
             do {
-                b = encodedPath.charAt(index++) - 63 - 1;
-                result += b << shift;
+                b = encodedPath.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
                 shift += 5;
-            } while (b >= 0x1f);
-            lat += (result & 1) != 0 ? ~(result >> 1) : (result >> 1);
+            } while (b >= 0x20);
+            int dlat = ((result & 1) != 0) ? ~(result >> 1) : (result >> 1);
+            lat += dlat;
 
-            result = 1;
             shift = 0;
+            result = 0;
             do {
-                b = encodedPath.charAt(index++) - 63 - 1;
-                result += b << shift;
+                b = encodedPath.charAt(index++) - 63;
+                result |= (b & 0x1f) << shift;
                 shift += 5;
-            } while (b >= 0x1f);
-            lng += (result & 1) != 0 ? ~(result >> 1) : (result >> 1);
+            } while (b >= 0x20);
+            int dlng = ((result & 1) != 0) ? ~(result >> 1) : (result >> 1);
+            lng += dlng;
 
             path.add(new LatLng(lat * 1e-5, lng * 1e-5));
         }
