@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
     private Marker currentMarker, startMarker, endMarker;
     private Handler handler = new Handler();
-    private float moveSpeed = 0.0001f;
+    private float moveSpeed = 0.00005f;
     private int moveDuration = 10000;
 
     private Button btnSelectStart, btnSelectEnd, btnStartMove, btnToggleJoystick;
