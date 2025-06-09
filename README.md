@@ -8,6 +8,6 @@
 
 팀원 : 박희재 옥진서 이강호
 
-박희재-https://github.com/gmlwo680890/Andinterface.git
+박희재-https://github.com/gmlwo680890/GPS
 
 이채운 - https://github.com/LCW-hub/MockGPS.git
