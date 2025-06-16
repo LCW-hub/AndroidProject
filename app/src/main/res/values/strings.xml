@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GPS</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="register_title">회원가입</string>
+    <string name="weather_title">날씨 정보</string>
+    <string name="community_title">산책 커뮤니티</string>
+    <string name="tips_title">산책로 팁</string>
+    <string name="favorites_title">즐겨찾는 길</string>
+</resources>
