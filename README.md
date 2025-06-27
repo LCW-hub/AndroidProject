@@ -1,4 +1,4 @@
-# GPS 산책로 앱 (GuideFriend)
+# 길잡이 친구 (GuideFriend)
 
 ## 📱 프로젝트 개요
 GPS 기반 산책로 탐색 및 정보 제공 Android 애플리케이션
@@ -62,13 +62,10 @@ GPS/
 ### Android 앱
 - **언어**: Java
 - **지도**: 네이버 지도 SDK, T-Map API
-- **네트워킹**: Retrofit2, OkHttp
-- **이미지**: Glide
 - **위치**: Google Play Services Location
 
 ### 백엔드 서버
 - **언어**: Node.js
-- **프레임워크**: Express.js
 - **데이터베이스**: Firebase Firestore (옵션)
 - **인증**: Firebase Auth (옵션)
 
@@ -100,7 +97,7 @@ GPS/
 ```
 
 ## 👥 팀 정보
-- **팀명**: 102 (일공이, ilgonge)
+- **팀명**: 길잡이 친구들(GuideFriends)
 - **팀장**: 이채운
 - **팀원**: 박희재, 옥진서, 이강호
 
