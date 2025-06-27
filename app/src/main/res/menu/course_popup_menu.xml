@@ -15,6 +15,7 @@
         android:id="@+id/popup_course3"
         android:title="둘레길 3코스 - 자연 힐링길"
         android:icon="@android:drawable/ic_menu_mylocation" />
+<<<<<<< HEAD
     
     <item
         android:id="@+id/popup_course4"
@@ -30,5 +31,7 @@
         android:id="@+id/popup_course6"
         android:title="북한산 3코스 - 정릉 코스"
         android:icon="@android:drawable/ic_menu_mylocation" />
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         
 </menu> 

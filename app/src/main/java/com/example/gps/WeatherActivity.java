@@ -79,7 +79,11 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
         // 5일 예보 정보 요청하는 부분
+=======
+        // 5일 예보 정보 요청
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         Call<WeatherForecast> forecastCall = weatherApi.getWeatherForecast("Seoul", WEATHER_API_KEY);
         forecastCall.enqueue(new Callback<WeatherForecast>() {
             @Override

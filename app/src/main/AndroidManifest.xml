@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gps">
 
     <!-- 필수 권한 -->
+=======
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ✅ 필수 권한 -->
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -20,15 +26,25 @@
         android:theme="@style/Theme.GPS"
         tools:targetApi="31">
 
+<<<<<<< HEAD
         <!-- 네이버 지도 API 키 -->
+=======
+        <!-- ✅ 네이버 지도 API 키 -->
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         <meta-data
             android:name="com.naver.maps.map.NCP_KEY_ID"
             android:value="iaxrf6bmtc" />
 
+<<<<<<< HEAD
         <!-- 앱 시작 액티비티 -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+=======
+        <!-- ✅ 앱 시작 액티비티 -->
+        <activity
+            android:name=".MainActivity"
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,12 +52,19 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <!-- 네이버 지도 관련 액티비티 -->
         <activity
             android:name=".MapsActivity"
             android:exported="false" />
 
         <!-- 기타 화면들 -->
+=======
+        <!-- ✅ 네이버 지도 관련 액티비티 -->
+        <activity android:name=".MapsActivity" android:exported="true" />
+
+        <!-- ✅ 기타 화면들 -->
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".FindIdActivity" />
@@ -49,15 +72,23 @@
         <activity android:name=".AdminMain" />
         <activity android:name=".GuestMain" />
         <activity android:name=".NormalMain" />
+<<<<<<< HEAD
+=======
+
+        <!-- ✅ 새로운 기능 액티비티들 -->
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".CommunityActivity" />
         <activity android:name=".TipsActivity" />
         <activity android:name=".FavoritesActivity" />
+<<<<<<< HEAD
         
         <!-- 새로 추가된 기능들 -->
         <activity android:name=".CourseDetailActivity" />
         <activity android:name=".RecommendationActivity" />
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
     </application>
 </manifest>

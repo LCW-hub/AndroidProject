@@ -50,6 +50,7 @@
 
     </LinearLayout>
 
+<<<<<<< HEAD
     <!-- 포스트 작성 영역 -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -57,6 +58,12 @@
         android:layout_margin="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp">
+=======
+    <!-- 스크롤뷰 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,6 +71,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+<<<<<<< HEAD
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,5 +129,298 @@
         android:layout_weight="1"
         android:padding="16dp"
         android:clipToPadding="false" />
+=======
+            <!-- 커뮤니티 포스트 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌸"
+                            android:textSize="24sp"
+                            android:layout_marginEnd="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="산책러버"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2시간 전"
+                                android:textSize="12sp"
+                                android:textColor="#999999" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="남한산성 둘레길 후기 🌸"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="오늘 남한산성 둘레길을 다녀왔는데 정말 좋았어요! 벚꽃이 만개해서 너무 예뻤습니다. 다음주에 또 가려고 해요~"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="❤️ 15"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_marginEnd="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💬 3"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 커뮤니티 포스트 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💡"
+                            android:textSize="24sp"
+                            android:layout_marginEnd="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="걷기대장"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4시간 전"
+                                android:textSize="12sp"
+                                android:textColor="#999999" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="초보자 산책 팁 공유 💡"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="산책 초보자분들께 도움이 될 만한 팁들을 공유드려요!\n• 편한 신발 착용\n• 충분한 수분 준비\n• 스트레칭 필수"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="❤️ 28"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_marginEnd="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💬 7"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- 커뮤니티 포스트 3 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌙"
+                            android:textSize="24sp"
+                            android:layout_marginEnd="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="자연사랑"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1일 전"
+                                android:textSize="12sp"
+                                android:textColor="#999999" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="한강공원 야경 산책 🌙"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="어제 저녁에 한강공원에서 야경을 보며 산책했어요. 정말 낭만적이었습니다! 연인들에게 추천해요~"
+                        android:textSize="14sp"
+                        android:textColor="#666666"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="❤️ 42"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_marginEnd="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💬 12"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
 </LinearLayout> 

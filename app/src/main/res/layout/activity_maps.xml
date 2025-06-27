@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent"
     android:background="#eaf2f7"
     android:fitsSystemWindows="true">
@@ -34,10 +35,146 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp">
 
+=======
+    android:layout_height="match_parent">
+
+    <!-- 메인 콘텐츠 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 상단 툴바와 지도 영역 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 상단 툴바 -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+            <!-- 지도와 버튼을 포함하는 프레임 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- 지도 영역 -->
+                <com.naver.maps.map.MapView
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!-- 우측 상단 코스 선택 버튼 -->
+                <Button
+                    android:id="@+id/btnCourseSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="코스 선택"
+                    android:textSize="14sp"
+                    android:padding="12dp"
+                    android:background="@android:drawable/btn_default"
+                    android:visibility="gone"
+                    android:drawableEnd="@android:drawable/arrow_down_float"
+                    android:drawablePadding="8dp" />
+
+            </FrameLayout>
+
+            <!-- 하단 고정 버튼들 -->
+            <LinearLayout
+                android:id="@+id/buttonsLayout"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0F0F0">
+
+                <Button
+                    android:id="@+id/btnBackToSeoul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="서울로 돌아가기"
+                    android:background="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="8dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 코스 선택 원형 버튼들 -->
+        <LinearLayout
+            android:id="@+id/courseButtonsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- 기존 FloatingActionButton들이 있었던 곳 - 이제 사용하지 않으므로 제거 -->
+
+        </LinearLayout>
+
+        <!-- 하단 코스 설명 패널 -->
+        <LinearLayout
+            android:id="@+id/courseInfoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="8dp"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:translationY="420dp">
+
+            <!-- 상단 핸들 -->
+            <View
+                android:id="@+id/panelHandle"
+                android:layout_width="50dp"
+                android:layout_height="6dp"
+                android:layout_gravity="center_horizontal"
+                android:background="#AAAAAA"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- 코스 제목 -->
+            <TextView
+                android:id="@+id/courseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="둘레길 1코스"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 추천 대상 -->
+            <TextView
+                android:id="@+id/courseRecommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👨‍👩‍👧‍👦 가족 단위, 초보자 추천"
+                android:textSize="16sp"
+                android:textColor="#FF5722"
+                android:layout_marginBottom="12dp" />
+
+            <!-- 코스 정보 -->
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+<<<<<<< HEAD
                 android:padding="16dp">
 
                 <ImageView
@@ -224,11 +361,80 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+=======
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/courseDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📏 거리: 3.2km"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/courseDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="⏱️ 소요시간: 1.5시간"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/courseDifficulty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="⭐ 난이도: 쉬움"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+
+            <!-- 코스 설명 -->
+            <TextView
+                android:id="@+id/courseDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="남한산성의 대표적인 입문 코스로, 주요 성문과 역사적 건물들을 둘러볼 수 있습니다. 경사가 완만하여 어린이나 어르신도 부담 없이 걸을 수 있으며, 조선시대 역사와 문화를 체험할 수 있는 최적의 코스입니다."
+                android:textSize="14sp"
+                android:textColor="#444444"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- 닫기 버튼 -->
+            <Button
+                android:id="@+id/btnCloseInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="닫기"
+                android:background="@android:color/holo_blue_light"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- 우측 Drawer 메뉴 -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/right_drawer"
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:background="@android:color/white"
+<<<<<<< HEAD
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/right_drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
+=======
+        android:fitsSystemWindows="true"
+        android:overScrollMode="never"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/right_drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.GPS" parent="Theme.Material3.DayNight.NoActionBar">
@@ -6,6 +9,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+<<<<<<< HEAD
     <style name="Theme.GPS" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -15,4 +19,7 @@
         <item name="android:windowBackground">@color/colorBackground</item>
         <item name="cardViewStyle">@style/Widget.MaterialComponents.CardView</item>
     </style>
+=======
+    <style name="Theme.GPS" parent="Base.Theme.GPS" />
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 </resources>

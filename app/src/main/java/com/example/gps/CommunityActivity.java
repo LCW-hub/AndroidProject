@@ -1,6 +1,7 @@
 package com.example.gps;
 
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,13 @@ public class CommunityActivity extends AppCompatActivity {
     private EditText etPostContent;
     private Button btnPost, btnPhotoSpot;
 
+=======
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class CommunityActivity extends AppCompatActivity {
+
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +40,7 @@ public class CommunityActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("산책 커뮤니티");
+<<<<<<< HEAD
 
         initViews();
         setupRecyclerView();
@@ -101,6 +110,8 @@ public class CommunityActivity extends AppCompatActivity {
                    Toast.makeText(this, "포토스팟이 입력되었습니다.", Toast.LENGTH_SHORT).show();
                })
                .show();
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     }
 
     @Override

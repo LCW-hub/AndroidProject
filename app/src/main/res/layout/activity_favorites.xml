@@ -165,7 +165,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                                 android:text="남한산성 야경길"
+=======
+                                android:text="한강공원 야경길"
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 android:textColor="#333333" />

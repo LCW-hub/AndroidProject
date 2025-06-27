@@ -1,5 +1,6 @@
 package com.example.gps;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -25,6 +26,9 @@ import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.PathOverlay;
 import com.naver.maps.map.util.FusedLocationSource;
+=======
+import android.content.Intent;
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -34,6 +38,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
+<<<<<<< HEAD
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -44,13 +49,52 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+=======
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.naver.maps.geometry.LatLng;
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 import com.naver.maps.map.CameraAnimation;
 import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapView;
+<<<<<<< HEAD
 import com.naver.maps.map.overlay.OverlayImage;
 import org.json.JSONArray;
 import org.json.JSONObject;
+=======
+import com.naver.maps.map.NaverMap;
+import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.OverlayImage;
+import com.naver.maps.map.overlay.PathOverlay;
+import com.naver.maps.map.util.FusedLocationSource;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -62,7 +106,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+<<<<<<< HEAD
 import android.view.animation.AccelerateDecelerateInterpolator;
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -73,7 +120,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private DangerZoneManager dangerZoneManager;
     private FacilityManager facilityManager;
 
+<<<<<<< HEAD
     private androidx.cardview.widget.CardView courseInfoPanel;
+=======
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private LinearLayout buttonsLayout;
+    private LinearLayout courseButtonsLayout;
+    private LinearLayout courseInfoPanel;
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     
     // 메뉴 관련 - 설정 메뉴만 유지
     private Menu optionsMenu;
@@ -86,6 +141,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private TextView courseDifficulty;
     private TextView courseDescription;
     private Button btnCloseInfo;
+<<<<<<< HEAD
+=======
+    private Button btnCourseSelector; // 코스 선택 버튼
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private static final String TMAP_API_KEY = "6BXu3W092c8kdbZVOOzDe5YqlALysG305fjlKG10";
@@ -111,6 +170,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final float[] PANEL_HIDDEN_Y_VALUES = {
         745f,  // 1코스 - 핸들 부분만 보이도록 큰 값으로 조정
         680f,  // 2코스 - 중간 길이 설명에 맞춰 조정
+<<<<<<< HEAD
         800f,  // 3코스 - 긴 설명에 맞춰 가장 크게 조정
         750f,  // 북한산 1코스 - 도봉산 코스
         780f,  // 북한산 2코스 - 우이동 코스
@@ -118,6 +178,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     };
     
     private int currentCourseIndex = -1; // 현재 선택된 코스 인덱스 (-1: 메인, 0-2: 남한산성 코스, 3-5: 북한산 코스)
+=======
+        800f   // 3코스 - 긴 설명에 맞춰 가장 크게 조정
+    };
+    
+    private int currentCourseIndex = -1; // 현재 선택된 코스 인덱스
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     
     // 코스별 정보 데이터
     private static class CourseInfo {
@@ -142,12 +208,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
     
     private CourseInfo[] courseInfos = {
+<<<<<<< HEAD
         // 남한산성 코스들
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         new CourseInfo(
             "둘레길 1코스 - 역사 탐방길",
             "👨‍👩‍👧‍👦 가족 단위, 초보자 추천",
             "📏 거리: 3.2km",
+<<<<<<< HEAD
             "⏱️ 소요시간: 1시간30분",
+=======
+            "⏱️ 소요시간: 1.5시간",
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
             "⭐ 난이도: 쉬움",
             "남한산성의 대표적인 입문 코스로, 주요 성문과 역사적 건물들을 둘러볼 수 있습니다. 경사가 완만하여 어린이나 어르신도 부담 없이 걸을 수 있으며, 조선시대 역사와 문화를 체험할 수 있는 최적의 코스입니다.",
             0xFFFF5722
@@ -165,6 +238,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "둘레길 3코스 - 자연 힐링길",
             "🏔️ 고급자, 자연 애호가 추천",
             "📏 거리: 4.1km",
+<<<<<<< HEAD
             "⏱️ 소요시간: 2시간30분",
             "⭐⭐⭐ 난이도: 어려움",
             "남한산성의 자연경관을 만끽할 수 있는 코스입니다. 벌봉 정상에서의 탁 트인 전망과 깊은 숲길, 계곡을 따라 걸으며 사계절 아름다운 자연을 느낄 수 있습니다. 체력적으로 도전적이지만 그만큼 큰 만족감을 줍니다.",
@@ -206,6 +280,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
+=======
+            "⏱️ 소요시간: 2.5시간",
+            "⭐⭐⭐ 난이도: 어려움",
+            "남한산성의 자연경관을 만끽할 수 있는 코스입니다. 벌봉 정상에서의 탁 트인 전망과 깊은 숲길, 계곡을 따라 걸으며 사계절 아름다운 자연을 느낄 수 있습니다. 체력적으로 도전적이지만 그만큼 큰 만족감을 줍니다.",
+            0xFF4CAF50
+        )
+    };
+
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -214,6 +297,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+<<<<<<< HEAD
         // DrawerLayout 초기화
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -257,10 +341,33 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
 
         // 지도 초기화
+=======
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.right_drawer);
+        buttonsLayout = findViewById(R.id.buttonsLayout);
+        buttonsLayout.setVisibility(View.VISIBLE);
+        courseButtonsLayout = findViewById(R.id.courseButtonsLayout);
+        courseInfoPanel = findViewById(R.id.courseInfoPanel);
+
+        // 코스 정보 패널 뷰 초기화
+        courseTitle = findViewById(R.id.courseTitle);
+        courseRecommendation = findViewById(R.id.courseRecommendation);
+        courseDistance = findViewById(R.id.courseDistance);
+        courseDuration = findViewById(R.id.courseDuration);
+        courseDifficulty = findViewById(R.id.courseDifficulty);
+        courseDescription = findViewById(R.id.courseDescription);
+        btnCloseInfo = findViewById(R.id.btnCloseInfo);
+
+        // 코스 선택 버튼 초기화
+        btnCourseSelector = findViewById(R.id.btnCourseSelector);
+        btnCourseSelector.setOnClickListener(v -> showCoursePopupMenu());
+
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+<<<<<<< HEAD
         // 코스 정보 패널 초기화
         courseInfoPanel = findViewById(R.id.course_info_panel);
         courseTitle = findViewById(R.id.course_title);
@@ -326,6 +433,59 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // onCreate 등에서 btnCloseInfo 클릭 시 패널 닫기
         btnCloseInfo.setOnClickListener(v -> hideCourseInfoPanel());
         // ... existing code ...
+=======
+        locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
+
+        // 서울로 돌아가기 버튼
+        Button btnBackToSeoul = findViewById(R.id.btnBackToSeoul);
+        btnBackToSeoul.setOnClickListener(v -> {
+            // 서울 중심부로 부드럽게 이동
+            CameraUpdate cameraUpdate = CameraUpdate.scrollAndZoomTo(
+                new LatLng(37.5665, 126.9780), 11)
+                .animate(CameraAnimation.Easing, 1500);
+            naverMap.moveCamera(cameraUpdate);
+            
+            // 기본 마커들만 다시 표시
+            showMainMarkers();
+            
+            // 원형 버튼들과 정보 패널 완전히 숨기기
+            courseButtonsLayout.setVisibility(View.GONE);
+            courseInfoPanel.setVisibility(View.GONE);
+            currentCourseIndex = -1; // 코스 인덱스 초기화
+            
+            // 코스 선택 버튼 숨기기
+            btnCourseSelector.setVisibility(View.GONE);
+            
+            Toast.makeText(this, "서울로 돌아갑니다.", Toast.LENGTH_SHORT).show();
+        });
+
+        // 코스 정보 닫기 버튼
+        btnCloseInfo.setOnClickListener(v -> hideCourseInfoPanel());
+
+        // 코스 정보 패널 드래그 기능 초기화
+        setupPanelDrag();
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_login) {
+                startActivity(new Intent(this, LoginActivity.class));
+            } else if (itemId == R.id.nav_register) {
+                startActivity(new Intent(this, RegisterActivity.class));
+            } else if (itemId == R.id.nav_weather) {
+                startActivity(new Intent(this, WeatherActivity.class));
+            } else if (itemId == R.id.nav_community) {
+                startActivity(new Intent(this, CommunityActivity.class));
+            } else if (itemId == R.id.nav_tips) {
+                startActivity(new Intent(this, TipsActivity.class));
+            } else if (itemId == R.id.nav_favorites) {
+                startActivity(new Intent(this, FavoritesActivity.class));
+            } else {
+                Toast.makeText(this, "메뉴: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+            drawerLayout.closeDrawer(GravityCompat.END);
+            return true;
+        });
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     }
 
     @Override
@@ -335,6 +495,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
         
+<<<<<<< HEAD
+=======
+        dangerZoneManager = new DangerZoneManager();
+        facilityManager = new FacilityManager();
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         loadDangerZones();
         loadFacilities();
 
@@ -432,6 +597,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void clearMap() {
+<<<<<<< HEAD
         // 기존 마커들 제거 (메인 마커들 제외)
         List<Marker> markersToRemove = new ArrayList<>();
         for (Marker marker : activeMarkers) {
@@ -447,6 +613,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             marker.setMap(null);
             activeMarkers.remove(marker);
         }
+=======
+        // 기존 마커들 제거
+        for (Marker marker : activeMarkers) {
+            marker.setMap(null);
+        }
+        activeMarkers.clear();
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 
         // 기존 경로들 제거
         for (PathOverlay overlay : pathOverlays) {
@@ -650,9 +823,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             clearMap();
             
             // 원형 버튼들과 정보 패널 완전히 숨기기
+<<<<<<< HEAD
             courseInfoPanel.setVisibility(View.GONE);
             currentCourseIndex = -1; // 코스 인덱스 초기화
             
+=======
+            courseButtonsLayout.setVisibility(View.GONE);
+            courseInfoPanel.setVisibility(View.GONE);
+            currentCourseIndex = -1; // 코스 인덱스 초기화
+            
+            // 코스 선택 버튼 숨기기
+            btnCourseSelector.setVisibility(View.GONE);
+            
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
             // 남한산성 둘레길 마커 (산성로터리 위치)
             Marker namhansanMarker = new Marker();
             namhansanMarker.setPosition(new LatLng(37.478046, 127.184021));
@@ -668,6 +851,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 naverMap.moveCamera(cameraUpdate);
                 
                 // 코스 선택 버튼 보이기
+<<<<<<< HEAD
                 btnCloseInfo.setVisibility(View.VISIBLE);
                 btnCloseInfo.setText("닫기");
                 
@@ -680,6 +864,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 
                 // 남한산성 코스 정보 표시 (첫 번째 코스 정보로 표시)
                 showNamhansanCourseInfo();
+=======
+                btnCourseSelector.setVisibility(View.VISIBLE);
+                btnCourseSelector.setText("코스 선택"); // 초기 텍스트로 리셋
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
                 
                 // 코스 선택 안내 메시지
                 Toast.makeText(MapsActivity.this, "우측 상단 버튼에서 원하는 코스를 선택하세요.", Toast.LENGTH_LONG).show();
@@ -694,6 +882,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             
             // 북한산 마커 클릭 이벤트
             bukhansanMarker.setOnClickListener(overlay -> {
+<<<<<<< HEAD
                 // 북한산으로 부드럽게 이동하면서 확대
                 CameraUpdate cameraUpdate = CameraUpdate.scrollAndZoomTo(
                     new LatLng(37.6586, 126.9770), 14)
@@ -716,6 +905,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 
                 // 코스 선택 안내 메시지
                 Toast.makeText(MapsActivity.this, "우측 상단 버튼에서 원하는 코스를 선택하세요.", Toast.LENGTH_LONG).show();
+=======
+                Toast.makeText(MapsActivity.this, "북한산 둘레길 정보는 준비 중입니다.", Toast.LENGTH_SHORT).show();
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
                 return true;
             });
             
@@ -732,6 +924,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (PathOverlay p : pathOverlays) p.setMap(null);
         pathOverlays.clear();
 
+<<<<<<< HEAD
         // 현재 선택된 지역에 따라 해당 지역의 코스만 표시
         if (currentCourseIndex >= 3) {
             // 북한산 코스 표시 (현재는 데이터가 없으므로 기본 마커만)
@@ -785,6 +978,37 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             // 메인 화면에서는 아무것도 표시하지 않음
             Toast.makeText(this, "먼저 남한산성 또는 북한산 마커를 클릭해주세요.", Toast.LENGTH_SHORT).show();
+=======
+        try {
+            // 1코스, 2코스, 3코스 모두 표시
+            for (int courseIndex = 0; courseIndex < coursesJSON.length(); courseIndex++) {
+                JSONObject course = coursesJSON.getJSONObject(courseIndex);
+                int color = getColorForIndex(courseIndex);
+
+                // 각 코스의 마커들 표시
+                JSONArray markers = course.getJSONArray("markers");
+                for (int j = 0; j < markers.length(); j++) {
+                    JSONObject m = markers.getJSONObject(j);
+                    Marker marker = new Marker();
+                    marker.setPosition(new LatLng(m.getDouble("lat"), m.getDouble("lng")));
+                    marker.setCaptionText(m.getString("name"));
+                    marker.setMap(naverMap);
+                    activeMarkers.add(marker);
+                }
+
+                // 각 코스의 경로 표시
+                JSONArray route = course.getJSONArray("route");
+                for (int j = 0; j < route.length() - 1; j++) {
+                    JSONObject p1 = route.getJSONObject(j);
+                    JSONObject p2 = route.getJSONObject(j + 1);
+                    LatLng start = new LatLng(p1.getDouble("lat"), p1.getDouble("lng"));
+                    LatLng end = new LatLng(p2.getDouble("lat"), p2.getDouble("lng"));
+                    requestTMapWalkSegment(start, end, color);
+                }
+            }
+        } catch (Exception e) {
+            Log.e("DisplayAllCourses", "전체 코스 표시 실패", e);
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         }
     }
 
@@ -1051,6 +1275,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             .setDuration(500)
             .setInterpolator(new AccelerateDecelerateInterpolator())
             .start();
+<<<<<<< HEAD
             
         // 전체보기 버튼 텍스트 업데이트
         updateAllCoursesButtonText();
@@ -1114,6 +1339,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         
         // 전체보기 버튼 텍스트 업데이트
         updateAllCoursesButtonText();
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     }
 
     // 코스 정보 패널 숨기기
@@ -1232,21 +1459,31 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+<<<<<<< HEAD
         getMenuInflater().inflate(R.menu.menu_main, menu);
+=======
+        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        this.optionsMenu = menu;
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+<<<<<<< HEAD
         int id = item.getItemId();
         if (id == R.id.action_drawer) {
             DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+=======
+        if (item.getItemId() == R.id.action_settings) {
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
             drawerLayout.openDrawer(GravityCompat.END);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< HEAD
     // 날씨 정보를 표시하는 메서드
     private void showWeatherInfo() {
         // 현재 위치의 날씨 정보를 가져와서 표시
@@ -1319,6 +1556,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             "현재 날씨: %s\n기온: %.1f°C\n습도: %d%%",
             description, temp, humidity
         );
+=======
+    // 코스 선택 팝업 메뉴 표시
+    private void showCoursePopupMenu() {
+        PopupMenu popupMenu = new PopupMenu(this, btnCourseSelector);
+        popupMenu.getMenuInflater().inflate(R.menu.course_popup_menu, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(menuItem -> {
+            int itemId = menuItem.getItemId();
+            if (itemId == R.id.popup_course1) {
+                selectCourse(0);
+                btnCourseSelector.setText("코스1");
+                return true;
+            } else if (itemId == R.id.popup_course2) {
+                selectCourse(1);
+                btnCourseSelector.setText("코스2");
+                return true;
+            } else if (itemId == R.id.popup_course3) {
+                selectCourse(2);
+                btnCourseSelector.setText("코스3");
+                return true;
+            }
+            return false;
+        });
+
+        popupMenu.show();
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     }
 
     // 코스 선택 처리
@@ -1339,6 +1602,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toast.makeText(this, "📍 " + courseName + " 마커와 경로를 표시합니다.\n🔄 실제 보행 경로를 불러오는 중...", Toast.LENGTH_LONG).show();
     }
 
+<<<<<<< HEAD
     // 북한산 코스 선택 처리
     private void selectBukhansanCourse(int courseIndex) {
         // 북한산으로 부드럽게 이동
@@ -1426,6 +1690,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         popupMenu.show();
     }
 
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
     // 위치 업데이트 시 위험 구역 체크
     private void checkDangerZone(LatLng location) {
         if (dangerZoneManager != null) {
@@ -1438,6 +1704,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         MarkerDetailFragment fragment = MarkerDetailFragment.newInstance(title, description, imageUrl, type);
         fragment.show(getSupportFragmentManager(), "marker_detail");
     }
+<<<<<<< HEAD
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -1477,6 +1744,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
     }
+=======
+>>>>>>> eb6a61de94925d9caf84c525f5335968ab81c5fb
 }
 
 
