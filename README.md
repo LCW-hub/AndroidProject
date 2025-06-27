@@ -76,50 +76,17 @@ GPS/
 - **날씨**: OpenWeatherMap API
 - **지도**: 네이버 지도 API, T-Map API
 
-## 🚀 설치 및 실행
-
-### Android 앱 실행
-1. Android Studio 설치
-2. 프로젝트 클론
-```bash
-git clone https://github.com/LCW-hub/GuideFreind.git
-```
-3. API 키 설정
-   - `app/src/main/res/values/api_keys.xml` 파일 생성
-   - 네이버 지도, T-Map, OpenWeatherMap API 키 입력
-4. 앱 빌드 및 실행
-
-### 서버 실행 (옵션)
-1. Node.js 설치
-2. 서버 디렉토리로 이동
-```bash
-cd server
-npm install
-```
-3. 환경 변수 설정
-```bash
-cp env.example .env
-# .env 파일에서 API 키 설정
-```
-4. 서버 실행
-```bash
-npm start
-```
-
 ## 📋 API 키 설정
 
 ### 필수 API 키
 1. **네이버 지도 API**
    - [네이버 클라우드 플랫폼](https://www.ncloud.com/)에서 발급
-   - `app/src/main/res/values/api_keys.xml`에 설정
 
 2. **T-Map API**
    - [T-Map 개발자 센터](https://developers.sktelecom.com/)에서 발급
-   - `app/src/main/res/values/api_keys.xml`에 설정
 
 3. **OpenWeatherMap API**
    - [OpenWeatherMap](https://openweathermap.org/api)에서 발급
-   - `app/src/main/res/values/api_keys.xml`에 설정
 
 ### API 키 설정 예시
 ```xml
@@ -136,16 +103,6 @@ npm start
 - **팀명**: 102 (일공이, ilgonge)
 - **팀장**: 이채운
 - **팀원**: 박희재, 옥진서, 이강호
-
-## 📄 라이선스
-이 프로젝트는 MIT 라이선스 하에 배포됩니다.
-
-## 🤝 기여하기
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📞 문의
 프로젝트 관련 문의사항이 있으시면 이슈를 생성해주세요. 
