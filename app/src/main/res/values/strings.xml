@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">길잡이 친구</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">설정</string>
+    <string name="title_activity_maps">산책로 안내</string>
+    <string name="title_activity_weather">날씨 정보</string>
+    <string name="title_activity_login">로그인</string>
+    <string name="title_activity_register">회원가입</string>
+    <string name="title_activity_community">커뮤니티</string>
+    <string name="title_activity_favorites">즐겨찾기</string>
+    <string name="title_activity_tips">산책로 팁</string>
+    <string name="slogan">당신의 산책을 함께하는 길잡이 친구</string>
+    <string name="btn_back_to_seoul">서울로 돌아가기</string>
+    <string name="btn_close">닫기</string>
+    <string name="btn_course_select">코스 선택</string>
+</resources>
